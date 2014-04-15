@@ -1,0 +1,14 @@
+************************* STARTING *************************
+
+shared: &i:forkloop.c:10
+
+Warning: Possible data race: &i:forkloop.c:10 is not protected!
+ references:
+  dereference of cast:forkloop.c:5 at forkloop.c:5
+    &i:forkloop.c:10 => cast:forkloop.c:5 at dostuff forkloop.c:12
+  locks acquired:
+    <empty>
+  in: main at forkloop.c:8 
+
+
+*************************** DONE ***************************

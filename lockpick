@@ -1,0 +1,2 @@
+#!/bin/bash
+/home/qingkai/locksmith-1.0/cil/bin/cilly --dontlocksmith --dolockpick -lpthread $*

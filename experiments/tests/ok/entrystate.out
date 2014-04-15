@@ -1,0 +1,7 @@
+************************* STARTING *************************
+
+shared: &shared:entrystate.c:4
+&shared:entrystate.c:4 is protected by:
+  concrete global_lock:entrystate.c:23
+  global_lock:entrystate.c:5
+*************************** DONE ***************************

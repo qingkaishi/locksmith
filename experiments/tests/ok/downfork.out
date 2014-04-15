@@ -1,0 +1,22 @@
+************************* STARTING *************************
+
+shared: &x:downfork.c:11
+
+Warning: Possible data race: &x:downfork.c:11 is not protected!
+ references:
+  dereference of cast:downfork.c:4 at downfork.c:4
+    &x:downfork.c:11 => dofork.y:downfork.c:12
+                     => y:downfork.c:6 at dofork downfork.c:12
+                     => cast:downfork.c:4 at doit downfork.c:8
+  locks acquired:
+    <empty>
+  in: main at downfork.c:10  -> downfork.c:12
+
+  dereference of &x:downfork.c:11 at downfork.c:13
+    &x:downfork.c:11
+  locks acquired:
+    <empty>
+  in: main at downfork.c:10 
+
+
+*************************** DONE ***************************

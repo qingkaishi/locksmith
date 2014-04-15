@@ -1,0 +1,12 @@
+************************* STARTING *************************
+
+
+simple02.c:9: Warning: assigning pointer to non-pointer: int*^{f.return:simple02.c:9}
+ ->
+ void
+
+simple02.c:9: Warning: assigning non-pointer to pointer: void
+ ->
+ int*^{f.return:simple02.c:9}
+shared: <empty>
+*************************** DONE ***************************

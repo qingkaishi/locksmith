@@ -1,0 +1,43 @@
+************************* STARTING *************************
+
+shared: alloc.cancel:ds-gftp.c:35
+        alloc.done:ds-gftp.c:35
+        alloc.numfiles:ds-gftp.c:35
+
+Warning: Possible data race: alloc.numfiles:ds-gftp.c:35 is not protected!
+ references:
+  dereference of *tdata.numfiles:ds-gftp.c:62 at ds-gftp.c:67
+    alloc.numfiles:ds-gftp.c:35 => tdata->numfiles:ds-gftp.c:31
+                                => *tdata.numfiles:ds-gftp.c:96 at gftp_tdata_new ds-gftp.c:96
+                                => tdata->numfiles:ds-gftp.c:85 at doit2 ds-gftp.c:100
+                                => *tdata.numfiles:ds-gftp.c:62 at update_file_status ds-gftp.c:86
+  locks acquired:
+    concrete tdata->statmutex::-1 -> gftp_tdata_new ds-gftp.c:96
+    tdata->statmutex:ds-gftp.c:96
+  in: main at ds-gftp.c:91  -> ds-gftp.c:86
+
+  dereference of *tdata.numfiles:ds-gftp.c:62 at ds-gftp.c:75
+    alloc.numfiles:ds-gftp.c:35 => tdata->numfiles:ds-gftp.c:31
+                                => *tdata.numfiles:ds-gftp.c:96 at gftp_tdata_new ds-gftp.c:96
+                                => tdata->numfiles:ds-gftp.c:85 at doit2 ds-gftp.c:100
+                                => *tdata.numfiles:ds-gftp.c:62 at update_file_status ds-gftp.c:86
+  locks acquired:
+    concrete tdata->statmutex::-1 -> gftp_tdata_new ds-gftp.c:96
+    tdata->statmutex:ds-gftp.c:96
+  in: main at ds-gftp.c:91  -> ds-gftp.c:86
+
+  dereference of *tdata.numfiles:ds-gftp.c:96 at ds-gftp.c:97
+    alloc.numfiles:ds-gftp.c:35 => tdata->numfiles:ds-gftp.c:31
+                                => *tdata.numfiles:ds-gftp.c:96 at gftp_tdata_new ds-gftp.c:96
+  locks acquired:
+    <empty>
+  in: main at ds-gftp.c:91 
+
+
+alloc.cancel:ds-gftp.c:35 is protected by:
+  concrete tdata->structmutex::-1 -> gftp_tdata_new ds-gftp.c:96
+  tdata->structmutex:ds-gftp.c:96
+alloc.done:ds-gftp.c:35 is protected by:
+  concrete tdata->structmutex::-1 -> gftp_tdata_new ds-gftp.c:96
+  tdata->structmutex:ds-gftp.c:96
+*************************** DONE ***************************

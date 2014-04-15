@@ -1,0 +1,17 @@
+************************* STARTING *************************
+
+shared: alloc.gdata:exist3-false-positive.c:40
+
+Warning: Possible data race: alloc.gdata:exist3-false-positive.c:40 is not protected!
+ references:
+  dereference of *in.gdata:exist3-false-positive.c:17 at exist3-false-positive.c:22
+    alloc.gdata:exist3-false-positive.c:40 => s->gdata:exist3-false-positive.c:34
+                                           => s.gdata:exist3-false-positive.c:35 at pack exist3-false-positive.c:42
+                                           => in->gdata:exist3-false-positive.c:26 at f exist3-false-positive.c:45
+                                           => *in.gdata:exist3-false-positive.c:17 at doit exist3-false-positive.c:28
+  locks acquired:
+    <empty>
+  in: main at exist3-false-positive.c:33 
+
+
+*************************** DONE ***************************

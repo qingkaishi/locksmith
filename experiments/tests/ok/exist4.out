@@ -1,0 +1,7 @@
+************************* STARTING *************************
+
+shared: &g_cache_cur:exist4.c:17
+&g_cache_cur:exist4.c:17 is protected by:
+  concrete g_cache_mutex:exist4.c:45
+  g_cache_mutex:exist4.c:16
+*************************** DONE ***************************

@@ -1,0 +1,24 @@
+************************* STARTING *************************
+
+shared: alloc.data:ds6.c:40
+        alloc.next:ds6.c:40
+
+Warning: Possible data race: alloc.data:ds6.c:40 is protected by non-linear or concrete lock(s):
+  *cur.lock:ds6.c:14
+  *new.lock:ds6.c:40
+  non linear concrete new->lock:ds6.c:42
+ references:
+  dereference of data:ds6.c:21 at ds6.c:26
+    alloc.data:ds6.c:40 => *cur.data:ds6.c:14
+                        => data:ds6.c:21
+  locks acquired:
+    *cur.lock:ds6.c:14
+    *new.lock:ds6.c:40
+    non linear concrete new->lock:ds6.c:42
+  in: main at ds6.c:34 
+
+
+alloc.next:ds6.c:40 is protected by:
+  concrete global_lock:ds6.c:38
+  global_lock:ds6.c:13
+*************************** DONE ***************************

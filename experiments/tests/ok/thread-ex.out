@@ -1,0 +1,24 @@
+************************* STARTING *************************
+
+functions declared and used but not defined:
+  printf
+  pthread_join
+shared: alloc.thread_no:thread-ex.c:41
+
+Warning: Possible data race: alloc.thread_no:thread-ex.c:41 is not protected!
+ references:
+  dereference of *data.thread_no:thread-ex.c:30 at thread-ex.c:34
+    alloc.thread_no:thread-ex.c:41 => data1.thread_no:thread-ex.c:41
+                                   => *data.thread_no:thread-ex.c:30 at print_message_function thread-ex.c:52
+  locks acquired:
+    <empty>
+  in: main at thread-ex.c:38 
+
+  dereference of data1.thread_no:thread-ex.c:41 at thread-ex.c:60
+    alloc.thread_no:thread-ex.c:41 => data1.thread_no:thread-ex.c:41
+  locks acquired:
+    <empty>
+  in: main at thread-ex.c:38 
+
+
+*************************** DONE ***************************

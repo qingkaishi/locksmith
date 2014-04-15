@@ -1,0 +1,11 @@
+************************* STARTING *************************
+
+shared: alloc.data:ds3.c:14
+        alloc.other_data:ds3.c:14
+alloc.other_data:ds3.c:14 is protected by:
+  concrete global_lock:ds3.c:30
+  global_lock:ds3.c:13
+alloc.data:ds3.c:14 is protected by:
+  concrete shared.lock:ds3.c:31
+  shared.lock:ds3.c:14
+*************************** DONE ***************************

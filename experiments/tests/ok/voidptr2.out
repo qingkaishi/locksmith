@@ -1,0 +1,15 @@
+************************* STARTING *************************
+
+shared: &a:voidptr2.c:9
+
+Warning: Possible data race: &a:voidptr2.c:9 is not protected!
+ references:
+  dereference of z:voidptr2.c:4 at voidptr2.c:5
+    &a:voidptr2.c:9 => cast:voidptr2.c:4 at dostuff voidptr2.c:11
+                    => z:voidptr2.c:4
+  locks acquired:
+    <empty>
+  in: main at voidptr2.c:8 
+
+
+*************************** DONE ***************************

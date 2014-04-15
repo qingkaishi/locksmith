@@ -1,0 +1,22 @@
+************************* STARTING *************************
+
+shared: alloc.data:ds2b.c:11
+
+Warning: Possible data race: alloc.data:ds2b.c:11 is not protected!
+ references:
+  dereference of shared.data:ds2b.c:11 at ds2b.c:15
+    alloc.data:ds2b.c:11 => shared.data:ds2b.c:11
+  locks acquired:
+    concrete shared.lock:ds2b.c:22
+    shared.lock:ds2b.c:11
+  in: main at ds2b.c:19  -> ds2b.c:26
+  in: main at ds2b.c:19 
+
+  dereference of shared.data:ds2b.c:11 at ds2b.c:24
+    alloc.data:ds2b.c:11 => shared.data:ds2b.c:11
+  locks acquired:
+    <empty>
+  in: main at ds2b.c:19 
+
+
+*************************** DONE ***************************

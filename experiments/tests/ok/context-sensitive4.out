@@ -1,0 +1,13 @@
+************************* STARTING *************************
+
+shared: &x:context-sensitive4.c:4
+        &y:context-sensitive4.c:4
+&x:context-sensitive4.c:4 is protected by:
+  *munge.l:context-sensitive4.c:17
+  L1:context-sensitive4.c:3
+  concrete L1:context-sensitive4.c:27
+&y:context-sensitive4.c:4 is protected by:
+  *munge.l:context-sensitive4.c:18
+  L2:context-sensitive4.c:3
+  concrete L2:context-sensitive4.c:28
+*************************** DONE ***************************

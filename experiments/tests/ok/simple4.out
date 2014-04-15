@@ -1,0 +1,19 @@
+************************* STARTING *************************
+
+shared: &non_protected:simple4.c:7
+        &shared:simple4.c:6
+&shared:simple4.c:6 is protected by:
+  concrete lock::-1 -> doit simple4.c:26
+  concrete lock:simple4.c:19
+  lock:simple4.c:5
+
+Warning: Possible data race: &non_protected:simple4.c:7 is not protected!
+ references:
+  dereference of &non_protected:simple4.c:7 at simple4.c:13
+    &non_protected:simple4.c:7
+  locks acquired:
+    <empty>
+  in: main at simple4.c:24  -> simple4.c:26
+
+
+*************************** DONE ***************************

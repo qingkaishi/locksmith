@@ -1,0 +1,9 @@
+************************* STARTING *************************
+
+shared: &j:recursive2.c:4
+&j:recursive2.c:4 is protected by:
+  *l:recursive2.c:17
+  *rec.return:recursive2.c:30
+  concrete *t::-1 -> rec recursive2.c:30
+  concrete *t::-1 -> rec recursive2.c:30 -> rec recursive2.c:10
+*************************** DONE ***************************

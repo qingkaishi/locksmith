@@ -1,0 +1,7 @@
+************************* STARTING *************************
+
+shared: &j:norace1.c:4
+&j:norace1.c:4 is protected by:
+  concrete l:norace1.c:18
+  l:norace1.c:5
+*************************** DONE ***************************

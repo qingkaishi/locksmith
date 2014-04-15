@@ -1,0 +1,25 @@
+************************* STARTING *************************
+
+shared: &j:race2.c:3
+        &k:race2.c:7
+&j:race2.c:3 is protected by:
+  concrete l:race2.c:20
+  l:race2.c:5
+
+Warning: Possible data race: &k:race2.c:7 is not protected!
+ references:
+  dereference of j:race2.c:3 at race2.c:11
+    &k:race2.c:7 => j:race2.c:3
+  locks acquired:
+    concrete l:race2.c:20
+    l:race2.c:5
+  in: main at race2.c:17 
+
+  dereference of &k:race2.c:7 at race2.c:13
+    &k:race2.c:7
+  locks acquired:
+    <empty>
+  in: main at race2.c:17 
+
+
+*************************** DONE ***************************

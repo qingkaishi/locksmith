@@ -1,0 +1,45 @@
+************************* STARTING *************************
+
+shared: alloc.cancel:ds-gftp2.c:43
+        alloc.done:ds-gftp2.c:43
+        alloc.numfiles:ds-gftp2.c:43
+
+Warning: Possible data race: alloc.numfiles:ds-gftp2.c:43 is not protected!
+ references:
+  dereference of gftp_transfer.numfiles:ds-gftp2.c:72 at ds-gftp2.c:77
+    alloc.numfiles:ds-gftp2.c:43 => tdata->numfiles:ds-gftp2.c:39
+                                 => *tdata.numfiles:ds-gftp2.c:107 at gftp_tdata_new ds-gftp2.c:107
+                                 => gftp_transfer.numfiles:ds-gftp2.c:109 at pack ds-gftp2.c:110
+                                 => gftp_transfer.numfiles:ds-gftp2.c:96
+                                 => gftp_transfer.numfiles:ds-gftp2.c:72
+  locks acquired:
+    concrete tdata->statmutex::-1 -> gftp_tdata_new ds-gftp2.c:107
+    tdata->statmutex:ds-gftp2.c:107
+  in: main at ds-gftp2.c:102 
+
+  dereference of gftp_transfer.numfiles:ds-gftp2.c:72 at ds-gftp2.c:85
+    alloc.numfiles:ds-gftp2.c:43 => tdata->numfiles:ds-gftp2.c:39
+                                 => *tdata.numfiles:ds-gftp2.c:107 at gftp_tdata_new ds-gftp2.c:107
+                                 => gftp_transfer.numfiles:ds-gftp2.c:109 at pack ds-gftp2.c:110
+                                 => gftp_transfer.numfiles:ds-gftp2.c:96
+                                 => gftp_transfer.numfiles:ds-gftp2.c:72
+  locks acquired:
+    concrete tdata->statmutex::-1 -> gftp_tdata_new ds-gftp2.c:107
+    tdata->statmutex:ds-gftp2.c:107
+  in: main at ds-gftp2.c:102 
+
+  dereference of *tdata.numfiles:ds-gftp2.c:107 at ds-gftp2.c:108
+    alloc.numfiles:ds-gftp2.c:43 => tdata->numfiles:ds-gftp2.c:39
+                                 => *tdata.numfiles:ds-gftp2.c:107 at gftp_tdata_new ds-gftp2.c:107
+  locks acquired:
+    <empty>
+  in: main at ds-gftp2.c:102 
+
+
+alloc.cancel:ds-gftp2.c:43 is protected by:
+  concrete tdata->structmutex::-1 -> gftp_tdata_new ds-gftp2.c:107
+  tdata->structmutex:ds-gftp2.c:107
+alloc.done:ds-gftp2.c:43 is protected by:
+  concrete tdata->structmutex::-1 -> gftp_tdata_new ds-gftp2.c:107
+  tdata->structmutex:ds-gftp2.c:107
+*************************** DONE ***************************

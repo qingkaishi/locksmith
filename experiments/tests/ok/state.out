@@ -1,0 +1,96 @@
+************************* STARTING *************************
+
+
+state.c:84: Warning: assigning pointer to non-pointer: (void)*^{*p.cur:state.c:81}
+ ->
+ int
+
+state.c:84: Warning: assigning pointer to non-pointer: (void)*^{*p.data:state.c:81}
+ ->
+ int
+shared: &pool_list_head:state.c:28
+        &pool_list_tail:state.c:29
+        alloc.cur:state.c:38
+        alloc.next:state.c:38
+        alloc.prev:state.c:38
+&pool_list_head:state.c:28 is protected by:
+  concrete pool_list_lock:state.c:32
+  pool_list_lock:state.c:32
+  pool_list_lock:state.c:32
+&pool_list_tail:state.c:29 is protected by:
+  concrete pool_list_lock:state.c:32
+  pool_list_lock:state.c:32
+  pool_list_lock:state.c:32
+
+Warning: Possible data race: alloc.cur:state.c:38 is protected by non-linear or concrete lock(s):
+  *new_pool.pool_lock:state.c:36
+  non linear concrete new_pool->pool_lock::-1 -> get_new_pool state.c:107
+  non linear concrete new_pool->pool_lock::-1 -> go1 state.c:120 -> get_new_pool state.c:107
+  non linear concrete new_pool->pool_lock::-1 -> go1 state.c:121 -> get_new_pool state.c:107
+  non linear concrete new_pool->pool_lock:state.c:42
+  p->pool_lock:state.c:107
+ references:
+  dereference of *p.cur:state.c:81 at state.c:84
+    alloc.cur:state.c:38 => *new_pool.cur:state.c:36
+                         => p->cur:state.c:107 at get_new_pool state.c:107
+                         => *p.cur:state.c:81 at qsd_pmalloc state.c:108
+  locks acquired:
+    *new_pool.pool_lock:state.c:36
+    non linear concrete new_pool->pool_lock::-1 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock::-1 -> go1 state.c:120 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock::-1 -> go1 state.c:121 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock:state.c:42
+    p->pool_lock:state.c:107
+  in: main at state.c:117  -> state.c:100
+  in: main at state.c:117  -> state.c:101
+  in: main at state.c:117  -> state.c:102
+  in: main at state.c:117  -> state.c:108
+  in: main at state.c:117  -> state.c:113
+  in: main at state.c:117  -> state.c:114
+
+  dereference of *p.cur:state.c:81 at state.c:85
+    alloc.cur:state.c:38 => *new_pool.cur:state.c:36
+                         => p->cur:state.c:107 at get_new_pool state.c:107
+                         => *p.cur:state.c:81 at qsd_pmalloc state.c:108
+  locks acquired:
+    *new_pool.pool_lock:state.c:36
+    non linear concrete new_pool->pool_lock::-1 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock::-1 -> go1 state.c:120 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock::-1 -> go1 state.c:121 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock:state.c:42
+    p->pool_lock:state.c:107
+  in: main at state.c:117  -> state.c:100
+  in: main at state.c:117  -> state.c:101
+  in: main at state.c:117  -> state.c:102
+  in: main at state.c:117  -> state.c:108
+  in: main at state.c:117  -> state.c:113
+  in: main at state.c:117  -> state.c:114
+
+  dereference of *p.cur:state.c:81 at state.c:86
+    alloc.cur:state.c:38 => *new_pool.cur:state.c:36
+                         => p->cur:state.c:107 at get_new_pool state.c:107
+                         => *p.cur:state.c:81 at qsd_pmalloc state.c:108
+  locks acquired:
+    *new_pool.pool_lock:state.c:36
+    non linear concrete new_pool->pool_lock::-1 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock::-1 -> go1 state.c:120 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock::-1 -> go1 state.c:121 -> get_new_pool state.c:107
+    non linear concrete new_pool->pool_lock:state.c:42
+    p->pool_lock:state.c:107
+  in: main at state.c:117  -> state.c:100
+  in: main at state.c:117  -> state.c:101
+  in: main at state.c:117  -> state.c:102
+  in: main at state.c:117  -> state.c:108
+  in: main at state.c:117  -> state.c:113
+  in: main at state.c:117  -> state.c:114
+
+
+alloc.prev:state.c:38 is protected by:
+  concrete pool_list_lock:state.c:32
+  pool_list_lock:state.c:32
+  pool_list_lock:state.c:32
+alloc.next:state.c:38 is protected by:
+  concrete pool_list_lock:state.c:32
+  pool_list_lock:state.c:32
+  pool_list_lock:state.c:32
+*************************** DONE ***************************

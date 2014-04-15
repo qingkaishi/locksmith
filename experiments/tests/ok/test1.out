@@ -1,0 +1,20 @@
+************************* STARTING *************************
+
+shared: &j:test1.c:4
+
+Warning: Possible data race: &j:test1.c:4 is not protected!
+ references:
+  dereference of &j:test1.c:4 at test1.c:12
+    &j:test1.c:4
+  locks acquired:
+    concrete l::-1 -> dostuff test1.c:21
+  in: main at test1.c:17 
+
+  dereference of &j:test1.c:4 at test1.c:12
+    &j:test1.c:4
+  locks acquired:
+    concrete l::-1 -> dostuff test1.c:20
+  in: main at test1.c:17 
+
+
+*************************** DONE ***************************

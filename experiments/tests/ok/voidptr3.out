@@ -1,0 +1,41 @@
+************************* STARTING *************************
+
+shared: &c:voidptr3.c:41
+        alloc.v:voidptr3.c:40
+
+Warning: Possible data race: &c:voidptr3.c:41 is not protected!
+ references:
+  dereference of r:voidptr3.c:29 at voidptr3.c:30
+    &c:voidptr3.c:41 => cast:voidptr3.c:29 at dostuff4 voidptr3.c:46
+                     => r:voidptr3.c:29
+  locks acquired:
+    <empty>
+  in: main at voidptr3.c:38 
+
+  dereference of p:voidptr3.c:34 at voidptr3.c:35
+    &c:voidptr3.c:41 => cast:voidptr3.c:34 at dostuff5 voidptr3.c:47
+                     => p:voidptr3.c:34
+  locks acquired:
+    <empty>
+  in: main at voidptr3.c:38 
+
+
+
+Warning: Possible data race: alloc.v:voidptr3.c:40 is not protected!
+ references:
+  dereference of *w.v:voidptr3.c:18 at voidptr3.c:19
+    alloc.v:voidptr3.c:40 => b.v:voidptr3.c:40
+                          => *w.v:voidptr3.c:18 at dostuff2 voidptr3.c:44
+  locks acquired:
+    <empty>
+  in: main at voidptr3.c:38 
+
+  dereference of *t.v:voidptr3.c:24 at voidptr3.c:25
+    alloc.v:voidptr3.c:40 => b.v:voidptr3.c:40
+                          => *t.v:voidptr3.c:24 at dostuff3 voidptr3.c:45
+  locks acquired:
+    <empty>
+  in: main at voidptr3.c:38 
+
+
+*************************** DONE ***************************

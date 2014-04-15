@@ -1,0 +1,17 @@
+************************* STARTING *************************
+
+
+nonlex.c:10: Warning: assigning pointer to non-pointer: (void)*^{a:nonlex.c:9}
+ ->
+ int
+
+nonlex.c:25: Warning: assigning number to pointer
+shared: &j:nonlex.c:6
+        &k:nonlex.c:7
+&j:nonlex.c:6 is protected by:
+  concrete l:nonlex.c:24
+  l:nonlex.c:5
+&k:nonlex.c:7 is protected by:
+  concrete l:nonlex.c:24
+  l:nonlex.c:5
+*************************** DONE ***************************

@@ -1,0 +1,7 @@
+************************* STARTING *************************
+
+shared: &shared:simple1c.c:14
+&shared:simple1c.c:14 is protected by:
+  concrete lock:simple1c.c:8
+  lock:simple1c.c:3
+*************************** DONE ***************************

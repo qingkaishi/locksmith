@@ -1,0 +1,17 @@
+************************* STARTING *************************
+
+shared: &i:function-pointer5.c:22
+
+Warning: Possible data race: &i:function-pointer5.c:22 is not protected!
+ references:
+  dereference of &i:function-pointer5.c:22 at function-pointer5.c:26
+    &i:function-pointer5.c:22
+  locks acquired:
+    <empty>
+  in: main at function-pointer5.c:32  -> function-pointer5.c:35
+  in: main at function-pointer5.c:32  -> function-pointer5.c:35 -> function-pointer5.c:27
+  in: main at function-pointer5.c:32 
+  in: main at function-pointer5.c:32  -> function-pointer5.c:27
+
+
+*************************** DONE ***************************

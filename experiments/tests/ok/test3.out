@@ -1,0 +1,34 @@
+************************* STARTING *************************
+
+functions declared and used but not defined:
+  printf
+shared: &i:test3.c:28
+
+Warning: Possible data race: &i:test3.c:28 is not protected!
+ references:
+  dereference of cast:test3.c:23 at test3.c:23
+    &i:test3.c:28 => cast:test3.c:23 at dostuff test3.c:31
+  locks acquired:
+    concrete *l::-1 -> dostuff test3.c:31 -> f test3.c:25
+  in: main at test3.c:27 
+
+  dereference of cast:test3.c:23 at test3.c:23
+    &i:test3.c:28 => cast:test3.c:23 at dostuff test3.c:31
+  locks acquired:
+    concrete *l::-1 -> dostuff test3.c:32 -> f test3.c:25
+  in: main at test3.c:27 
+
+  dereference of &i:test3.c:28 at test3.c:33
+    &i:test3.c:28
+  locks acquired:
+    <empty>
+  in: main at test3.c:27 
+
+  dereference of &i:test3.c:28 at test3.c:34
+    &i:test3.c:28
+  locks acquired:
+    <empty>
+  in: main at test3.c:27 
+
+
+*************************** DONE ***************************

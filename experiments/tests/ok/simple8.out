@@ -1,0 +1,22 @@
+************************* STARTING *************************
+
+shared: &foo:simple8.c:10
+
+Warning: Possible data race: &foo:simple8.c:10 is not protected!
+ references:
+  dereference of j:simple8.c:6 at simple8.c:7
+    &foo:simple8.c:10 => f.j:simple8.c:13
+                      => j:simple8.c:6 at f simple8.c:13
+  locks acquired:
+    <empty>
+  in: main at simple8.c:9 
+
+  dereference of j:simple8.c:6 at simple8.c:7
+    &foo:simple8.c:10 => f.j:simple8.c:13
+                      => j:simple8.c:6 at f simple8.c:13
+  locks acquired:
+    <empty>
+  in: main at simple8.c:9 
+
+
+*************************** DONE ***************************

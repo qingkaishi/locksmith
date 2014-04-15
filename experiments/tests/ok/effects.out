@@ -1,0 +1,20 @@
+************************* STARTING *************************
+
+shared: &i:effects.c:21
+
+Warning: Possible data race: &i:effects.c:21 is not protected!
+ references:
+  dereference of cast:effects.c:15 at effects.c:15
+    &i:effects.c:21 => cast:effects.c:15 at dostuff effects.c:23
+  locks acquired:
+    <empty>
+  in: main at effects.c:19 
+
+  dereference of &i:effects.c:21 at effects.c:24
+    &i:effects.c:21
+  locks acquired:
+    <empty>
+  in: main at effects.c:19 
+
+
+*************************** DONE ***************************

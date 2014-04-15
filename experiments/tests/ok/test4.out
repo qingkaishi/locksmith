@@ -1,0 +1,33 @@
+************************* STARTING *************************
+
+
+test4.c:15: Warning: test4.c:15: Probably using char* where void* is best used:
+ lock(*l:test4.c:4)*^{l:test4.c:4}*^{&l:test4.c:4} flows to int*^{j:test4.c:5}.  Losing precision.
+
+
+test4.c:15: Warning: assigning incompatible pointers, conflating flow
+
+test4.c:15: Warning: lock is conflated! (*l:test4.c:4)
+
+test4.c:15: Warning: assigning number to pointer
+functions declared and used but not defined:
+  printf
+shared: &i:test4.c:24
+
+Warning: Possible data race: &i:test4.c:24 is not protected!
+ references:
+  dereference of &i:test4.c:24 at test4.c:27
+    &i:test4.c:24
+  locks acquired:
+    <empty>
+  in: main at test4.c:23 
+
+  dereference of i:test4.c:35 at test4.c:38
+    &i:test4.c:24 => cast:test4.c:35 at dostuff test4.c:28
+                  => i:test4.c:35
+  locks acquired:
+    <empty>
+  in: main at test4.c:23 
+
+
+*************************** DONE ***************************

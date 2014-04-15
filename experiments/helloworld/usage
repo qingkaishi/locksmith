@@ -1,0 +1,1 @@
+cilly --merge --list-shared --list-guardedby  lib.c helloworld/simple-race.c -pthread

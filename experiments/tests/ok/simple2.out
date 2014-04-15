@@ -1,0 +1,18 @@
+************************* STARTING *************************
+
+shared: &non_protected:simple2.c:5
+        &shared:simple2.c:4
+&shared:simple2.c:4 is protected by:
+  concrete lock:simple2.c:16
+  lock:simple2.c:3
+
+Warning: Possible data race: &non_protected:simple2.c:5 is not protected!
+ references:
+  dereference of &non_protected:simple2.c:5 at simple2.c:8
+    &non_protected:simple2.c:5
+  locks acquired:
+    <empty>
+  in: main at simple2.c:14 
+
+
+*************************** DONE ***************************

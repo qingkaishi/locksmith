@@ -1,0 +1,18 @@
+************************* STARTING *************************
+
+shared: &j:uniq1a.c:4
+        &k:uniq1a.c:10
+&j:uniq1a.c:4 is protected by:
+  concrete l:uniq1a.c:23
+  l:uniq1a.c:5
+
+Warning: Possible data race: &k:uniq1a.c:10 is not protected!
+ references:
+  dereference of m:uniq1a.c:11 at uniq1a.c:17
+    &k:uniq1a.c:10 => m:uniq1a.c:11
+  locks acquired:
+    <empty>
+  in: main at uniq1a.c:21 
+
+
+*************************** DONE ***************************

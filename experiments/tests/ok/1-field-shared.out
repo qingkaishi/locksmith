@@ -1,0 +1,15 @@
+************************* STARTING *************************
+
+shared: alloc.data:1-field-shared.c:15
+
+Warning: Possible data race: alloc.data:1-field-shared.c:15 is not protected!
+ references:
+  dereference of *p.data:1-field-shared.c:8 at 1-field-shared.c:9
+    alloc.data:1-field-shared.c:15 => p->data:1-field-shared.c:15
+                                   => *p.data:1-field-shared.c:8 at f 1-field-shared.c:17
+  locks acquired:
+    <empty>
+  in: main at 1-field-shared.c:13 
+
+
+*************************** DONE ***************************

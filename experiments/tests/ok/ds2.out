@@ -1,0 +1,7 @@
+************************* STARTING *************************
+
+shared: alloc.data:ds2.c:11
+alloc.data:ds2.c:11 is protected by:
+  concrete shared.lock:ds2.c:22
+  shared.lock:ds2.c:11
+*************************** DONE ***************************

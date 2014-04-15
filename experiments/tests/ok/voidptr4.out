@@ -1,0 +1,26 @@
+************************* STARTING *************************
+
+shared: &g:voidptr4.c:3
+        alloc.v:voidptr4.c:46
+&g:voidptr4.c:3 is protected by:
+  concrete l:voidptr4.c:48
+  l:voidptr4.c:4
+
+Warning: Possible data race: alloc.v:voidptr4.c:46 is not protected!
+ references:
+  dereference of *w.v:voidptr4.c:26 at voidptr4.c:32
+    alloc.v:voidptr4.c:46 => b.v:voidptr4.c:46
+                          => *w.v:voidptr4.c:26 at dostuff3 voidptr4.c:51
+  locks acquired:
+    <empty>
+  in: main at voidptr4.c:44 
+
+  dereference of *w.v:voidptr4.c:26 at voidptr4.c:41
+    alloc.v:voidptr4.c:46 => b.v:voidptr4.c:46
+                          => *w.v:voidptr4.c:26 at dostuff3 voidptr4.c:51
+  locks acquired:
+    <empty>
+  in: main at voidptr4.c:44 
+
+
+*************************** DONE ***************************

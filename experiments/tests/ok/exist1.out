@@ -1,0 +1,13 @@
+************************* STARTING *************************
+
+functions declared and used but not defined:
+  rnd
+shared: alloc.data:exist1.c:30
+        alloc.data:exist1.c:34
+alloc.data:exist1.c:34 is protected by:
+  *s2.lock:exist1.c:26
+  concrete s2->lock:exist1.c:35
+alloc.data:exist1.c:30 is protected by:
+  *s1.lock:exist1.c:25
+  concrete s1->lock:exist1.c:31
+*************************** DONE ***************************

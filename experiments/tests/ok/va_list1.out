@@ -1,0 +1,22 @@
+************************* STARTING *************************
+
+functions declared and used but not defined:
+  __builtin_va_end
+shared: alloc:va_list1.c:16
+
+Warning: Possible data race: alloc:va_list1.c:16 is not protected!
+ references:
+  dereference of req:va_list1.c:10 at va_list1.c:24
+    alloc:va_list1.c:16 => req:va_list1.c:10
+  locks acquired:
+    <empty>
+  in: main at va_list1.c:13  -> va_list1.c:19
+
+  dereference of req:va_list1.c:10 at va_list1.c:34
+    alloc:va_list1.c:16 => req:va_list1.c:10
+  locks acquired:
+    <empty>
+  in: main at va_list1.c:13 
+
+
+*************************** DONE ***************************

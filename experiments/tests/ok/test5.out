@@ -1,0 +1,11 @@
+************************* STARTING *************************
+
+shared: &shared:test5.c:7
+        alloc.data:test5.c:4
+&shared:test5.c:7 is protected by:
+  concrete t:test5.c:19
+  t:test5.c:8
+alloc.data:test5.c:4 is protected by:
+  concrete t:test5.c:19
+  t:test5.c:8
+*************************** DONE ***************************

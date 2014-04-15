@@ -1,0 +1,15 @@
+************************* STARTING *************************
+
+shared: alloc.data:ds4b.c:34
+
+Warning: Possible data race: alloc.data:ds4b.c:34 is not protected!
+ references:
+  dereference of data:ds4b.c:20 at ds4b.c:22
+    alloc.data:ds4b.c:34 => *cur.data:ds4b.c:13
+                         => data:ds4b.c:20
+  locks acquired:
+    <empty>
+  in: main at ds4b.c:29 
+
+
+*************************** DONE ***************************

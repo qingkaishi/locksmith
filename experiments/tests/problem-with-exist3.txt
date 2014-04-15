@@ -1,0 +1,31 @@
+The problem with exist3.c
+-------------------------
+
+Behaviour:
+  Running locksmith on exist3.c gives an extra warning when existentials
+are activated.  The warning goes away with --no-existentials.
+
+Scenario:
+  An existential struct that also includes a non quantified field is
+stored in a global variable.
+
+Cause:
+  We use set_global for global labels, as opposed to adding all the
+self loops explicitly.  So, if there is a dereference of a global within
+an unpack, the guard will flow into the existential phi, all the way back
+to the pack point, bypassing call-return edges (since it's packed), so
+it will not get any new locks on call edges.  This happens with all guards
+that are created in the body of the unpack.  However, at the pack point we
+have an existential instantiation that translates from the existential phi
+to the phi right before the pack.  If the guards on the existential phi
+do not have any global labels, the translation will get rid of them, because
+there are no self-loops for existential instantiations.
+On the other hand, if a guard on the existential phi includes a global label,
+that will implicitly have a self loop for every instantiation, including
+the pack instantiations (even though it should only have self loops for
+the function instantiations).  So, the guard that involves the global
+gets translated through the pack.  If control flow was important (there
+is a call edge with a held global lock, as in this example) then we get
+a false positive, even if the global is protected by the lock, because
+the guard doesn't go through the call edge to reach main(), but instead
+follows the exist-phis around even if it shouldn't.

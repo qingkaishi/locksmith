@@ -1,0 +1,8 @@
+************************* STARTING *************************
+
+shared: &shared:simple3.c:5
+&shared:simple3.c:5 is protected by:
+  concrete lock::-1 -> doit simple3.c:23
+  concrete lock:simple3.c:16
+  lock:simple3.c:4
+*************************** DONE ***************************

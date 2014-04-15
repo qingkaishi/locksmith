@@ -1,0 +1,22 @@
+************************* STARTING *************************
+
+shared: &shared:badlock.c:6
+
+Warning: Possible data race: &shared:badlock.c:6 is protected by non-linear or concrete lock(s):
+  lock:badlock.c:5
+  non linear concrete lock::-1 -> doit badlock.c:22
+  non linear concrete lock::-1 -> doit badlock.c:23
+  non linear concrete lock:badlock.c:16
+ references:
+  dereference of &shared:badlock.c:6 at badlock.c:10
+    &shared:badlock.c:6
+  locks acquired:
+    lock:badlock.c:5
+    non linear concrete lock::-1 -> doit badlock.c:22
+    non linear concrete lock::-1 -> doit badlock.c:23
+    non linear concrete lock:badlock.c:16
+  in: main at badlock.c:20  -> badlock.c:22
+  in: main at badlock.c:20  -> badlock.c:23
+
+
+*************************** DONE ***************************

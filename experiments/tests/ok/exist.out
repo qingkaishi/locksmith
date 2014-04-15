@@ -1,0 +1,7 @@
+************************* STARTING *************************
+
+shared: alloc.data:exist.c:30
+alloc.data:exist.c:30 is protected by:
+  *s.lock:exist.c:25
+  concrete s->lock:exist.c:31
+*************************** DONE ***************************

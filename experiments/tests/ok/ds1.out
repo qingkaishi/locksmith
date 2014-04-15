@@ -1,0 +1,19 @@
+************************* STARTING *************************
+
+shared: alloc.data:ds1.c:16
+        alloc.other:ds1.c:16
+        alloc.other_data:ds1.c:19
+        alloc.other_data:ds1.c:37
+alloc.other_data:ds1.c:37 is protected by:
+  concrete global_lock:ds1.c:38
+  global_lock:ds1.c:15
+alloc.other_data:ds1.c:19 is protected by:
+  concrete global_lock:ds1.c:38
+  global_lock:ds1.c:15
+alloc.other:ds1.c:16 is protected by:
+  concrete global_lock:ds1.c:38
+  global_lock:ds1.c:15
+alloc.data:ds1.c:16 is protected by:
+  concrete global_lock:ds1.c:38
+  global_lock:ds1.c:15
+*************************** DONE ***************************

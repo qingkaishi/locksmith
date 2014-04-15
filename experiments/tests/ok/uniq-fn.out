@@ -1,0 +1,11 @@
+************************* STARTING *************************
+
+shared: &j:uniq-fn.c:6
+        alloc:uniq-fn.c:12
+&j:uniq-fn.c:6 is protected by:
+  concrete l:uniq-fn.c:30
+  l:uniq-fn.c:7
+alloc:uniq-fn.c:12 is protected by:
+  concrete l:uniq-fn.c:30
+  l:uniq-fn.c:7
+*************************** DONE ***************************

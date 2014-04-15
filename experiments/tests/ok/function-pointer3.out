@@ -1,0 +1,14 @@
+************************* STARTING *************************
+
+shared: &optval:function-pointer3.c:22
+
+Warning: Possible data race: &optval:function-pointer3.c:22 is not protected!
+ references:
+  dereference of &optval:function-pointer3.c:22 at function-pointer3.c:27
+    &optval:function-pointer3.c:22
+  locks acquired:
+    <empty>
+  in: main at function-pointer3.c:20 
+
+
+*************************** DONE ***************************

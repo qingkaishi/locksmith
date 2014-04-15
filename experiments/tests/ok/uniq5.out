@@ -1,0 +1,11 @@
+************************* STARTING *************************
+
+shared: &g:uniq5.c:4
+        alloc:uniq5.c:8
+&g:uniq5.c:4 is protected by:
+  concrete l:uniq5.c:20
+  l:uniq5.c:5
+alloc:uniq5.c:8 is protected by:
+  concrete l:uniq5.c:20
+  l:uniq5.c:5
+*************************** DONE ***************************

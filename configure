@@ -1,0 +1,26 @@
+#!/bin/sh
+ROOT=`pwd`
+cd cil
+#autoconf
+./configure EXTRASRCDIRS="$ROOT/src" EXTRAFEATURES="locksmith lockpick stmizer"
+cd ..
+#cat locksmith.in | sed -e "s.ROOT.$ROOT." > locksmith
+#cat lockpick.in | sed -e "s.ROOT.$ROOT." > lockpick
+
+echo "#!/bin/bash" > locksmith
+echo "export CILLY_DONT_COMPILE_AFTER_MERGE=1" >> locksmith
+echo "export CILLY_DONT_LINK_AFTER_MERGE=1" >> locksmith
+echo "$ROOT/cil/bin/cilly \$*" >> locksmith
+
+echo "#!/bin/bash" > lockpick
+echo "$ROOT/cil/bin/cilly --dontlocksmith --dolockpick -lpthread \$*" >> lockpick
+
+chmod a+x locksmith lockpick
+
+INCLUDE_PATH=`locate bits/predefs.h`
+INCLUDE_PATH=${INCLUDE_PATH%\/*}
+INCLUDE_PATH=${INCLUDE_PATH%\/*}
+
+echo "Execute the following two cmds for configuration:"
+echo "\t export C_INCLUDE_PATH=$INCLUDE_PATH"
+echo "\t export CPLUS_INCLUDE_PATH=$INCLUDE_PATH"

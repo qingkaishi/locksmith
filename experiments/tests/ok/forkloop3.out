@@ -1,0 +1,30 @@
+************************* STARTING *************************
+
+shared: alloc:forkloop3.c:11
+
+Warning: Possible data race: alloc:forkloop3.c:11 is not protected!
+ references:
+  dereference of cast:forkloop3.c:5 at forkloop3.c:5
+    alloc:forkloop3.c:11 => tmp::-1
+                         => mem:forkloop3.c:11
+                         => cast:forkloop3.c:5 at dostuff forkloop3.c:13
+  locks acquired:
+    <empty>
+  in: main at forkloop3.c:8 
+
+  dereference of mem:forkloop3.c:11 at forkloop3.c:12
+    alloc:forkloop3.c:11 => tmp::-1
+                         => mem:forkloop3.c:11
+  locks acquired:
+    <empty>
+  in: main at forkloop3.c:8 
+
+  dereference of mem:forkloop3.c:11 at forkloop3.c:14
+    alloc:forkloop3.c:11 => tmp::-1
+                         => mem:forkloop3.c:11
+  locks acquired:
+    <empty>
+  in: main at forkloop3.c:8 
+
+
+*************************** DONE ***************************

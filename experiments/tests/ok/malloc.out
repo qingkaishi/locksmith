@@ -1,0 +1,17 @@
+************************* STARTING *************************
+
+shared: alloc:malloc.c:14
+
+Warning: Possible data race: alloc:malloc.c:14 is not protected!
+ references:
+  dereference of b:malloc.c:8 at malloc.c:9
+    alloc:malloc.c:14 => tmp::-1
+                      => a:malloc.c:14
+                      => cast:malloc.c:8 at dostuff malloc.c:16
+                      => b:malloc.c:8
+  locks acquired:
+    <empty>
+  in: main at malloc.c:12 
+
+
+*************************** DONE ***************************

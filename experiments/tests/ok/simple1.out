@@ -1,0 +1,21 @@
+************************* STARTING *************************
+
+
+simple1.c:9: Warning: assigning pointer to non-pointer: int*^{const-string:simple1.c:9}
+ ->
+ void
+
+simple1.c:11: Warning: assigning pointer to non-pointer: int*^{const-string:simple1.c:11}
+ ->
+ void
+
+simple1.c:19: Warning: assigning pointer to non-pointer: int*^{const-string:simple1.c:19}
+ ->
+ void
+functions declared and used but not defined:
+  printf
+shared: &shared:simple1.c:4
+&shared:simple1.c:4 is protected by:
+  concrete lock:simple1.c:17
+  lock:simple1.c:3
+*************************** DONE ***************************

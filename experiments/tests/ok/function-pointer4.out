@@ -1,0 +1,19 @@
+************************* STARTING *************************
+
+shared: &i:function-pointer4.c:12
+
+Warning: Possible data race: &i:function-pointer4.c:12 is not protected!
+ references:
+  dereference of x:function-pointer4.c:3 at function-pointer4.c:4
+    &i:function-pointer4.c:12 => callfp.i:function-pointer4.c:14
+                              => i:function-pointer4.c:8 at callfp function-pointer4.c:14
+                              => fp->x:function-pointer4.c:8
+                              => callfp.fp->x:function-pointer4.c:14 at callfp function-pointer4.c:14
+                              => foo.x:function-pointer4.c:14
+                              => x:function-pointer4.c:3 at foo function-pointer4.c:14
+  locks acquired:
+    <empty>
+  in: main at function-pointer4.c:17  -> function-pointer4.c:14 -> function-pointer4.c:9
+
+
+*************************** DONE ***************************

@@ -1,0 +1,17 @@
+************************* STARTING *************************
+
+shared: &j:loop.c:4
+
+Warning: Possible data race: &j:loop.c:4 is protected by non-linear or concrete lock(s):
+  l:loop.c:6
+  non linear concrete l:loop.c:20
+ references:
+  dereference of &j:loop.c:4 at loop.c:10
+    &j:loop.c:4
+  locks acquired:
+    l:loop.c:6
+    non linear concrete l:loop.c:20
+  in: main at loop.c:15 
+
+
+*************************** DONE ***************************

@@ -1,0 +1,11 @@
+************************* STARTING *************************
+
+shared: alloc.data:ds7.c:41
+        alloc.next:ds7.c:41
+alloc.next:ds7.c:41 is protected by:
+  concrete global_lock:ds7.c:38
+  global_lock:ds7.c:11
+alloc.data:ds7.c:41 is protected by:
+  concrete local_lock:ds7.c:39
+  local_lock:ds7.c:12
+*************************** DONE ***************************

@@ -1,0 +1,20 @@
+************************* STARTING *************************
+
+shared: &j:function-pointer1.c:4
+
+Warning: Possible data race: &j:function-pointer1.c:4 is not protected!
+ references:
+  dereference of &j:function-pointer1.c:4 at function-pointer1.c:23
+    &j:function-pointer1.c:4
+  locks acquired:
+    <empty>
+  in: main at function-pointer1.c:27 
+
+  dereference of &j:function-pointer1.c:4 at function-pointer1.c:33
+    &j:function-pointer1.c:4
+  locks acquired:
+    <empty>
+  in: main at function-pointer1.c:27 
+
+
+*************************** DONE ***************************

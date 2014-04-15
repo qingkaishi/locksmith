@@ -1,0 +1,24 @@
+************************* STARTING *************************
+
+shared: alloc.data:ds1b.c:18
+        alloc.other_data:ds1b.c:30
+
+Warning: Possible data race: alloc.other_data:ds1b.c:30 is not protected!
+ references:
+  dereference of *(shared.other).other_data:ds1b.c:18 at ds1b.c:24
+    alloc.other_data:ds1b.c:30 => *(shared.other).other_data:ds1b.c:18
+  locks acquired:
+    <empty>
+  in: main at ds1b.c:27 
+
+  dereference of *(shared.other).other_data:ds1b.c:18 at ds1b.c:34
+    alloc.other_data:ds1b.c:30 => *(shared.other).other_data:ds1b.c:18
+  locks acquired:
+    <empty>
+  in: main at ds1b.c:27 
+
+
+alloc.data:ds1b.c:18 is protected by:
+  concrete global_lock:ds1b.c:31
+  global_lock:ds1b.c:17
+*************************** DONE ***************************

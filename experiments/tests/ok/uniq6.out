@@ -1,0 +1,28 @@
+************************* STARTING *************************
+
+shared: &g:uniq6.c:4
+        alloc:uniq6.c:8
+&g:uniq6.c:4 is protected by:
+  concrete l:uniq6.c:22
+  l:uniq6.c:5
+
+Warning: Possible data race: alloc:uniq6.c:8 is not protected!
+ references:
+  dereference of s:uniq6.c:8 at uniq6.c:12
+    alloc:uniq6.c:8 => tmp::-1
+                    => s:uniq6.c:8
+  locks acquired:
+    <empty>
+  in: main at uniq6.c:19 
+
+  dereference of g:uniq6.c:4 at uniq6.c:15
+    alloc:uniq6.c:8 => tmp::-1
+                    => s:uniq6.c:8
+                    => g:uniq6.c:4
+  locks acquired:
+    concrete l:uniq6.c:22
+    l:uniq6.c:5
+  in: main at uniq6.c:19 
+
+
+*************************** DONE ***************************

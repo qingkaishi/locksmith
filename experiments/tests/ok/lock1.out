@@ -1,0 +1,32 @@
+************************* STARTING *************************
+
+
+lock1.c:19: Warning: subtyping incompatible types:
+int
+void
+shared: &x:lock1.c:4
+
+Warning: Possible data race: &x:lock1.c:4 is protected by non-linear or concrete lock(s):
+  l:lock1.c:6
+  non linear concrete l:lock1.c:16
+  non linear concrete l:lock1.c:17
+ references:
+  dereference of &x:lock1.c:4 at lock1.c:10
+    &x:lock1.c:4
+  locks acquired:
+    l:lock1.c:6
+    non linear concrete l:lock1.c:16
+    non linear concrete l:lock1.c:17
+  in: FORK at lock1.c:19 
+             
+
+  dereference of &x:lock1.c:4 at lock1.c:10
+    &x:lock1.c:4
+  locks acquired:
+    l:lock1.c:6
+    non linear concrete l:lock1.c:16
+    non linear concrete l:lock1.c:17
+  in: main at lock1.c:14 
+             
+
+*************************** DONE ***************************

@@ -1,0 +1,52 @@
+************************* STARTING *************************
+
+
+simple01.c:10: Warning: simple01.c:10: Probably using char* where void* is best used:
+ (a: (void)*^{dostuff.a:simple01.c:10},
+  in at simple01.c:10)
+ ->^{(Er_reannot-insimple01.c:10,
+      Ew_reannot-insimple01.c:10,
+      Es_dummy:-1,
+     ),
+     (Er_reannot-outsimple01.c:10,
+      Ew_reannot-outsimple01.c:10,
+      Es_dummy:-1,
+     ),
+     X-Xr_Xsimple01.c:10}
+ ((void)*^{dostuff.return:simple01.c:10},
+  out at simple01.c:10)*^{&dostuff:simple01.c:4} flows to int*^{i:simple01.c:9}.  Losing precision.
+
+
+simple01.c:10: Warning: subtyping incompatible types:
+(a: (void)*^{dostuff.a:simple01.c:10},
+ in at simple01.c:10)
+->^{(Er_reannot-insimple01.c:10,
+     Ew_reannot-insimple01.c:10,
+     Es_dummy:-1,
+    ),
+    (Er_reannot-outsimple01.c:10,
+     Ew_reannot-outsimple01.c:10,
+     Es_dummy:-1,
+    ),
+    X-Xr_Xsimple01.c:10}
+((void)*^{dostuff.return:simple01.c:10},
+ out at simple01.c:10)
+int
+
+simple01.c:10: Warning: subtyping incompatible types:
+int
+(a: (void)*^{dostuff.a:simple01.c:10},
+ in at simple01.c:10)
+->^{(Er_reannot-insimple01.c:10,
+     Ew_reannot-insimple01.c:10,
+     Es_dummy:-1,
+    ),
+    (Er_reannot-outsimple01.c:10,
+     Ew_reannot-outsimple01.c:10,
+     Es_dummy:-1,
+    ),
+    X-Xr_Xsimple01.c:10}
+((void)*^{dostuff.return:simple01.c:10},
+ out at simple01.c:10)
+shared: <empty>
+*************************** DONE ***************************

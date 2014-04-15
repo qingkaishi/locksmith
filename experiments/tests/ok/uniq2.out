@@ -1,0 +1,26 @@
+************************* STARTING *************************
+
+shared: &j:uniq2.c:4
+        alloc:uniq2.c:13
+&j:uniq2.c:4 is protected by:
+  concrete l:uniq2.c:25
+  l:uniq2.c:5
+
+Warning: Possible data race: alloc:uniq2.c:13 is not protected!
+ references:
+  dereference of j:uniq2.c:4 at uniq2.c:17
+    alloc:uniq2.c:13 => k:uniq2.c:10
+                     => j:uniq2.c:4
+  locks acquired:
+    concrete l:uniq2.c:25
+    l:uniq2.c:5
+  in: main at uniq2.c:23 
+
+  dereference of k:uniq2.c:10 at uniq2.c:19
+    alloc:uniq2.c:13 => k:uniq2.c:10
+  locks acquired:
+    <empty>
+  in: main at uniq2.c:23 
+
+
+*************************** DONE ***************************

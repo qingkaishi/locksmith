@@ -1,0 +1,11 @@
+************************* STARTING *************************
+
+shared: &j:race1.c:9
+        &k:race1.c:13
+&j:race1.c:9 is protected by:
+  concrete l:race1.c:24
+  l:race1.c:10
+&k:race1.c:13 is protected by:
+  concrete l:race1.c:24
+  l:race1.c:10
+*************************** DONE ***************************

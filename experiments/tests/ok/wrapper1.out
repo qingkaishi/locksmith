@@ -1,0 +1,8 @@
+************************* STARTING *************************
+
+shared: &j:wrapper1.c:4
+&j:wrapper1.c:4 is protected by:
+  *wraplock.l___0:wrapper1.c:16
+  concrete l:wrapper1.c:24
+  l:wrapper1.c:5
+*************************** DONE ***************************

@@ -1,0 +1,23 @@
+************************* STARTING *************************
+
+shared: alloc:forkloop2.c:12
+
+Warning: Possible data race: alloc:forkloop2.c:12 is not protected!
+ references:
+  dereference of cast:forkloop2.c:6 at forkloop2.c:6
+    alloc:forkloop2.c:12 => tmp::-1
+                         => mem:forkloop2.c:12
+                         => cast:forkloop2.c:6 at dostuff forkloop2.c:14
+  locks acquired:
+    <empty>
+  in: main at forkloop2.c:9 
+
+  dereference of mem:forkloop2.c:12 at forkloop2.c:13
+    alloc:forkloop2.c:12 => tmp::-1
+                         => mem:forkloop2.c:12
+  locks acquired:
+    <empty>
+  in: main at forkloop2.c:9 
+
+
+*************************** DONE ***************************

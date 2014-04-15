@@ -1,0 +1,27 @@
+************************* STARTING *************************
+
+
+pool.c:86: Warning: assigning pointer to non-pointer: (void)*^{*p.cur:pool.c:83}
+ ->
+ int
+
+pool.c:86: Warning: assigning pointer to non-pointer: (void)*^{*p.data:pool.c:83}
+ ->
+ int
+shared: &pool_list_head:pool.c:30
+        &pool_list_tail:pool.c:31
+        alloc.next:pool.c:40
+        alloc.prev:pool.c:40
+&pool_list_head:pool.c:30 is protected by:
+  concrete pool_list_lock:pool.c:125
+  pool_list_lock:pool.c:34
+&pool_list_tail:pool.c:31 is protected by:
+  concrete pool_list_lock:pool.c:125
+  pool_list_lock:pool.c:34
+alloc.prev:pool.c:40 is protected by:
+  concrete pool_list_lock:pool.c:125
+  pool_list_lock:pool.c:34
+alloc.next:pool.c:40 is protected by:
+  concrete pool_list_lock:pool.c:125
+  pool_list_lock:pool.c:34
+*************************** DONE ***************************

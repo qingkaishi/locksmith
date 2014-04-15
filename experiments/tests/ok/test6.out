@@ -1,0 +1,15 @@
+************************* STARTING *************************
+
+shared: &shared:test6.c:3
+
+Warning: Possible data race: &shared:test6.c:3 is not protected!
+ references:
+  dereference of &shared:test6.c:3 at test6.c:9
+    &shared:test6.c:3
+  locks acquired:
+    <empty>
+  in: main at test6.c:16  -> test6.c:19
+  in: main at test6.c:16  -> test6.c:20
+
+
+*************************** DONE ***************************
