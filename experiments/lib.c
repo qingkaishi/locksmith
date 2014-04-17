@@ -60,8 +60,12 @@ struct _IO_FILE {
    __off64_t _offset ;
    void *__pad1 ;
    void *__pad2 ;
+   void *__pad3;
+   void *__pad4;
+   size_t __pad5;
+
    int _mode ;
-   char _unused2[(int )(15U * sizeof(int ) - 2U * sizeof(void *))] ;
+   char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
 };
 typedef unsigned short uint16_t;
 typedef unsigned int uint32_t;
@@ -232,7 +236,14 @@ char *inet_ntoa(struct in_addr in) {
   return b;
 }
 
-struct hostent {};
+//struct hostent {};
+struct hostent {
+    char *h_name;
+    char **h_aliases;
+    int h_addrtype;
+    int h_length;
+    char **h_addr_list;
+};
 
 struct hostent *gethostbyname(const char *name) {
   static struct hostent r;
