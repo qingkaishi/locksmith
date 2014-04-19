@@ -1,6 +1,6 @@
 
 $::archos    = "x86_LINUX";
 $::cc        = "gcc";
-$::cilhome   = "/home/qingkai/locksmith-1.0/cil";
+$::cilhome   = "/home/qingkaishi/locksmith/cil";
 $::default_mode = "GNUCC";
 

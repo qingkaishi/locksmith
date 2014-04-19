@@ -31,7 +31,7 @@ make
 If all goes well, this is enough to build Locksmith. Locksmith is implemented 
 in OCaml and uses CIL (written in Ocaml) and Banshee (written in C). We have 
 builted and tested it on *32-bit* x86 linux, and Darwin PowerPC architectures using 
-gcc versions 3.2.3, 4.0.0, 4.1.2 and 4.8.1 and OCaml versions 3.08.1, 3.09.1 and 
+gcc versions 3.2.3, 4.0.0, 4.1.2, 4.8.2 and 4.8.1, emacs versions 22.3 and OCaml versions 3.08.1, 3.09.1 and 
 3.09.2. When changing ocaml compilers the ordering of the output might change.
 
 Running Locksmith
@@ -44,7 +44,7 @@ We provide stub definitions for several library functions in locksmith/experimen
 All undefined functions in the final merged program will be listed as warnings.
 
 ```bash
-/path/to/locksmith/cil/bin/cilly --merge *.c
+/path/to/locksmith/locksmith --merge --list-shared --list-guardedby *.c
 ```
 
 Please refer to its homepage for detailed usage.

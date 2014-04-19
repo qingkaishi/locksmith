@@ -1,1 +1,1 @@
-perl /home/qingkai/locksmith-1.0/cil/bin/patcher %*
+perl /home/qingkaishi/locksmith/cil/bin/patcher %*

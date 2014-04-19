@@ -96,7 +96,7 @@ CILLY_MODULES = $(CILLY_LIBRARY_MODULES) main
 CILLY_CMODULES = perfcount $(LOCKSMITH_CMODULES)
 CILLY_LIBS     = unix str nums
 
-SOURCEDIRS  += src src/frontc src/ext src/ext/pta ocamlutil /home/qingkai/locksmith-1.0/src
+SOURCEDIRS  += src src/frontc src/ext src/ext/pta ocamlutil /home/qingkaishi/locksmith/src
 MLLS        += clexer.mll formatlex.mll
 MLYS        += cparser.mly formatparse.mly
 MODULES     += $(CILLY_MODULES) libmaincil
