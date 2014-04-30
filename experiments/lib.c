@@ -104,7 +104,10 @@ typedef unsigned int __mode_t;
 typedef unsigned int __nlink_t;
 typedef long __blksize_t;
 typedef long __blkcnt_t;
-struct timespec {};
+struct timespec {
+    long tv_sec;		/* Seconds.  */
+    long tv_nsec;	/* Nanoseconds.  */
+};
 struct stat {
    __dev_t st_dev ;
    unsigned short __pad1 ;
